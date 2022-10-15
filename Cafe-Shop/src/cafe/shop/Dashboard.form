@@ -83,6 +83,10 @@
                       <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jlblTime" min="-2" pref="145" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jlblDate" min="-2" pref="178" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       <Component id="btnMinus" min="-2" pref="37" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnExit" min="-2" max="-2" attributes="0"/>
@@ -101,6 +105,8 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
+                  <Component id="jlblDate" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jlblTime" alignment="0" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -149,6 +155,26 @@
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnMinusMouseClicked"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jlblDate">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="99" red="ff" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="18" style="1"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jlblTime">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="99" red="ff" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="18" style="1"/>
+                </Property>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
@@ -362,7 +388,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="10.000VND"/>
+                    <Property name="text" type="java.lang.String" value="10.000"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JSpinner" name="jSpinner1">
@@ -494,7 +520,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="25.000VND"/>
+                    <Property name="text" type="java.lang.String" value="25.000"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JSpinner" name="jSpinner2">
@@ -632,7 +658,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="22.000VND"/>
+                    <Property name="text" type="java.lang.String" value="22.000"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JSpinner" name="jSpinner3">
@@ -765,7 +791,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="52.000VND"/>
+                    <Property name="text" type="java.lang.String" value="52.000"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JSpinner" name="jSpinner4">
@@ -897,7 +923,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="40.000VND"/>
+                    <Property name="text" type="java.lang.String" value="40.000"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JSpinner" name="jSpinner5">
@@ -1033,7 +1059,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="90.000VND"/>
+                    <Property name="text" type="java.lang.String" value="90.000"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JSpinner" name="jSpinner6">
@@ -1169,7 +1195,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="20.000VND"/>
+                    <Property name="text" type="java.lang.String" value="20.000"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JSpinner" name="jSpinner7">
@@ -1306,7 +1332,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="40.000VND"/>
+                    <Property name="text" type="java.lang.String" value="40.000"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JSpinner" name="jSpinner8">
@@ -1443,7 +1469,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="40.000VND"/>
+                    <Property name="text" type="java.lang.String" value="40.000"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JSpinner" name="jSpinner9">
@@ -1802,6 +1828,12 @@
                 <Component class="javax.swing.JTextArea" name="jTextArea1">
                   <Properties>
                     <Property name="columns" type="int" value="20"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="14" style="0"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="33" green="33" red="33" type="rgb"/>
+                    </Property>
                     <Property name="rows" type="int" value="5"/>
                   </Properties>
                 </Component>

@@ -5,6 +5,10 @@
 package cafe.shop;
 
 import java.awt.Image;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -24,6 +28,7 @@ public class Dashboard extends javax.swing.JFrame {
     }
     public void init(){
         setImage();
+        setTime();
     }
 
     /**
@@ -40,6 +45,8 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btnExit = new javax.swing.JLabel();
         btnMinus = new javax.swing.JLabel();
+        jlblDate = new javax.swing.JLabel();
+        jlblTime = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -186,6 +193,12 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
+        jlblDate.setBackground(new java.awt.Color(255, 153, 204));
+        jlblDate.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+
+        jlblTime.setBackground(new java.awt.Color(255, 153, 204));
+        jlblTime.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -194,6 +207,10 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGap(58, 58, 58)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jlblTime, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jlblDate, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
                 .addComponent(btnMinus, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnExit)
@@ -208,6 +225,8 @@ public class Dashboard extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
                     .addComponent(btnExit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
+            .addComponent(jlblDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jlblTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel3.setBackground(new java.awt.Color(255, 204, 255));
@@ -237,7 +256,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel7.setText("7 UP-320ml");
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel8.setText("10.000VND");
+        jLabel8.setText("10.000");
 
         jSpinner1.setModel(new javax.swing.SpinnerNumberModel(0, 0, 54, 1));
 
@@ -308,7 +327,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel13.setText("Cold Coffe");
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel14.setText("25.000VND");
+        jLabel14.setText("25.000");
 
         jSpinner2.setModel(new javax.swing.SpinnerNumberModel(0, 0, 54, 1));
 
@@ -381,7 +400,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel19.setText("Black Coffe");
 
         jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel20.setText("22.000VND");
+        jLabel20.setText("22.000");
 
         jSpinner3.setModel(new javax.swing.SpinnerNumberModel(0, 0, 54, 1));
 
@@ -460,7 +479,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel25.setText("Hambuger");
 
         jLabel26.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel26.setText("52.000VND");
+        jLabel26.setText("52.000");
 
         jSpinner4.setModel(new javax.swing.SpinnerNumberModel(0, 0, 54, 1));
 
@@ -531,7 +550,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel31.setText("Lemon juice");
 
         jLabel32.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel32.setText("40.000VND");
+        jLabel32.setText("40.000");
 
         jSpinner5.setModel(new javax.swing.SpinnerNumberModel(0, 0, 54, 1));
 
@@ -608,7 +627,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel37.setText("Pizza");
 
         jLabel38.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel38.setText("90.000VND");
+        jLabel38.setText("90.000");
 
         jSpinner6.setModel(new javax.swing.SpinnerNumberModel(0, 0, 54, 1));
 
@@ -682,7 +701,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel43.setText("Milke Coffe");
 
         jLabel44.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel44.setText("20.000VND");
+        jLabel44.setText("20.000");
 
         jSpinner7.setModel(new javax.swing.SpinnerNumberModel(0, 0, 54, 1));
 
@@ -756,7 +775,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel49.setText("Orange juice");
 
         jLabel50.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel50.setText("40.000VND");
+        jLabel50.setText("40.000");
 
         jSpinner8.setModel(new javax.swing.SpinnerNumberModel(0, 0, 54, 1));
 
@@ -831,7 +850,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel55.setText("Hot Coffe");
 
         jLabel56.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel56.setText("40.000VND");
+        jLabel56.setText("40.000");
 
         jSpinner9.setModel(new javax.swing.SpinnerNumberModel(0, 0, 54, 1));
 
@@ -1115,6 +1134,8 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel16.setBackground(new java.awt.Color(255, 204, 204));
 
         jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(51, 51, 51));
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
@@ -1281,25 +1302,72 @@ public class Dashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
         setState(JFrame.ICONIFIED);
     }//GEN-LAST:event_btnMinusMouseClicked
-
+    private double total=0.0;
+    private int x=0;
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         // TODO add your handling code here:
+        int quantity=Integer.parseInt(jSpinner1.getValue().toString());
+        if(quantityiszero(quantity)&& jCheckBox1.isSelected()){
+            //cafeshop();
+            x++;
+            if(x==1){
+                cafeshop();
+            }
+            double price=quantity*10.000;
+            jTextArea1.setText(jTextArea1.getText()+x+"\t"+ jLabel13.getText()+"\t"+price+"\n" );
+        }else{
+            jCheckBox1.setSelected(false);
+        }
     }//GEN-LAST:event_jCheckBox1ActionPerformed
-
+    //bill
+    public void cafeshop(){
+        jTextArea1.setText("***************Cafe-Shop******************************\n"
+                + " Time : "+jlblTime.getText()+" "+" Date : "+jlblDate.getText()+"\n"
+                + "*******************************************************\n"
+                + "STT\t"+"Item Name:\t"+"Price(VND)"+"\n");
+    }
+///setTime
+    public void setTime(){
+        new Thread(new Runnable(){
+            @Override
+            public void run() {
+                while(true){
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    Date date=new Date();
+                    SimpleDateFormat timeformat=new SimpleDateFormat("h:mm:ss aa");
+                    SimpleDateFormat dateformat= new SimpleDateFormat("EEEE,dd-MM-yyyy");
+                    String time=timeformat.format(date);
+                    
+                    jlblTime.setText(time.split(" ")[0]+" "+time.split(" ")[1]);
+                    jlblDate.setText(dateformat.format(date));
+                    
+                }
+            }
+            
+        }).start();
+    }
     private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
         // TODO add your handling code here:
+      
     }//GEN-LAST:event_jCheckBox2ActionPerformed
 
     private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
         // TODO add your handling code here:
+       
     }//GEN-LAST:event_jCheckBox3ActionPerformed
 
     private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
         // TODO add your handling code here:
+      
     }//GEN-LAST:event_jCheckBox4ActionPerformed
 
     private void jCheckBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox5ActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_jCheckBox5ActionPerformed
 
     private void jCheckBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox6ActionPerformed
@@ -1346,6 +1414,18 @@ public class Dashboard extends javax.swing.JFrame {
         jtxtTax.setText("0.0");
         jtxtSubTotal.setText("0.0");
         jtxtTotal.setText("0.0");
+        jTextArea1.setText(" ");
+        jCheckBox2.setSelected(false);
+        jCheckBox3.setSelected(false);
+        jCheckBox1.setSelected(false);
+        jCheckBox4.setSelected(false);
+        jCheckBox5.setSelected(false);
+        jCheckBox6.setSelected(false);
+        jCheckBox7.setSelected(false);
+        jCheckBox8.setSelected(false);
+        jCheckBox9.setSelected(false);
+        jCheckBox10.setSelected(false);
+        
 
     }
     //setImage
@@ -1403,6 +1483,14 @@ public class Dashboard extends javax.swing.JFrame {
         
         
         
+    }
+    //quantity is Zero
+    public boolean quantityiszero(int quantity){
+        if(Integer.parseInt(jSpinner1.getValue().toString())==0){
+            JOptionPane.showMessageDialog(null, "Please Increase the item quantity");
+            return false;
+        }
+        return true;
     }
     private void jbtnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnExitActionPerformed
         // TODO add your handling code here:
@@ -1583,6 +1671,8 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JButton jbtnReceipt;
     private javax.swing.JButton jbtnReset;
     private javax.swing.JButton jbtnTotal;
+    private javax.swing.JLabel jlblDate;
+    private javax.swing.JLabel jlblTime;
     private javax.swing.JTextField jtxtSubTotal;
     private javax.swing.JTextField jtxtTax;
     private javax.swing.JTextField jtxtTotal;
