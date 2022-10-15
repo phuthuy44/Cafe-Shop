@@ -4,6 +4,8 @@
  */
 package cafe.shop;
 
+import java.awt.Image;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -18,6 +20,10 @@ public class Dashboard extends javax.swing.JFrame {
      */
     public Dashboard() {
         initComponents();
+        init();
+    }
+    public void init(){
+        setImage();
     }
 
     /**
@@ -150,9 +156,9 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel63 = new javax.swing.JLabel();
         jLabel64 = new javax.swing.JLabel();
         jLabel65 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        jtxtSubTotal = new javax.swing.JTextField();
+        jtxtTax = new javax.swing.JTextField();
+        jtxtTotal = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -241,8 +247,6 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        jLblManager.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/7up.jpg"))); // NOI18N
-
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -261,7 +265,7 @@ public class Dashboard extends javax.swing.JFrame {
                     .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addComponent(jLblManager, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(jLblManager, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -313,8 +317,6 @@ public class Dashboard extends javax.swing.JFrame {
                 jCheckBox2ActionPerformed(evt);
             }
         });
-
-        jLblManager1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Cold-Coffee-.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -390,7 +392,6 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         jLblManager2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        jLblManager2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/coffee-icon-64.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -469,28 +470,25 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        jLblManager3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/best-hamburger-patties-1.jpg"))); // NOI18N
-
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLblManager3, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSpinner4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCheckBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel26))))
+                .addGap(1, 1, 1)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSpinner4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCheckBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel26))
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jLblManager3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -546,7 +544,6 @@ public class Dashboard extends javax.swing.JFrame {
         jLblManager4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLblManager4.setForeground(new java.awt.Color(204, 204, 204));
         jLblManager4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLblManager4.setText("No image");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -624,7 +621,6 @@ public class Dashboard extends javax.swing.JFrame {
         jLblManager10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLblManager10.setForeground(new java.awt.Color(204, 204, 204));
         jLblManager10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLblManager10.setText("No image");
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -699,7 +695,6 @@ public class Dashboard extends javax.swing.JFrame {
         jLblManager11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLblManager11.setForeground(new java.awt.Color(204, 204, 204));
         jLblManager11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLblManager11.setText("No image");
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -774,7 +769,6 @@ public class Dashboard extends javax.swing.JFrame {
         jLblManager12.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLblManager12.setForeground(new java.awt.Color(204, 204, 204));
         jLblManager12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLblManager12.setText("No image");
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -850,7 +844,6 @@ public class Dashboard extends javax.swing.JFrame {
         jLblManager13.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLblManager13.setForeground(new java.awt.Color(204, 204, 204));
         jLblManager13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLblManager13.setText("No image");
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -869,7 +862,7 @@ public class Dashboard extends javax.swing.JFrame {
                     .addComponent(jSpinner9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jCheckBox9, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel56))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 6, Short.MAX_VALUE))
             .addComponent(jLblManager13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel12Layout.setVerticalGroup(
@@ -926,7 +919,6 @@ public class Dashboard extends javax.swing.JFrame {
         jLblManager14.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLblManager14.setForeground(new java.awt.Color(204, 204, 204));
         jLblManager14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLblManager14.setText("No image");
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -1135,21 +1127,33 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel65.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel65.setText("Total (S)");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jtxtSubTotal.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jtxtSubTotal.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jtxtSubTotal.setText("0.0");
+        jtxtSubTotal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        jtxtSubTotal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                jtxtSubTotalActionPerformed(evt);
             }
         });
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        jtxtTax.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jtxtTax.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jtxtTax.setText("0.0");
+        jtxtTax.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        jtxtTax.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                jtxtTaxActionPerformed(evt);
             }
         });
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        jtxtTotal.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jtxtTotal.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jtxtTotal.setText("0.0");
+        jtxtTotal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        jtxtTotal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                jtxtTotalActionPerformed(evt);
             }
         });
 
@@ -1163,19 +1167,19 @@ public class Dashboard extends javax.swing.JFrame {
                     .addGroup(jPanel17Layout.createSequentialGroup()
                         .addComponent(jLabel65, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jtxtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(17, 17, 17))
                     .addGroup(jPanel17Layout.createSequentialGroup()
                         .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jLabel63, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel64, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jtxtSubTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(15, 15, 15))))
             .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
                     .addContainerGap(145, Short.MAX_VALUE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtxtTax, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(14, 14, 14)))
         );
         jPanel17Layout.setVerticalGroup(
@@ -1188,16 +1192,16 @@ public class Dashboard extends javax.swing.JFrame {
                     .addComponent(jLabel64, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel17Layout.createSequentialGroup()
                         .addGap(12, 12, 12)
-                        .addComponent(jTextField1)))
+                        .addComponent(jtxtSubTotal)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel65, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField3))
+                    .addComponent(jtxtTotal))
                 .addContainerGap(17, Short.MAX_VALUE))
             .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel17Layout.createSequentialGroup()
                     .addGap(24, 24, 24)
-                    .addComponent(jTextField2)
+                    .addComponent(jtxtTax)
                     .addGap(105, 105, 105)))
         );
 
@@ -1325,11 +1329,81 @@ public class Dashboard extends javax.swing.JFrame {
     private void jbtnReceiptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnReceiptActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jbtnReceiptActionPerformed
-
+    
     private void jbtnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnResetActionPerformed
         // TODO add your handling code here:
+        reset();
     }//GEN-LAST:event_jbtnResetActionPerformed
+    public void reset(){
+        jSpinner2.setValue(0);
+        jSpinner3.setValue(0);
+        jSpinner1.setValue(0);
+        jSpinner4.setValue(0);
+        jSpinner5.setValue(0);
+        jSpinner6.setValue(0);
+        jSpinner7.setValue(0);
+        jSpinner8.setValue(0);
+        jtxtTax.setText("0.0");
+        jtxtSubTotal.setText("0.0");
+        jtxtTotal.setText("0.0");
 
+    }
+    //setImage
+    public void setImage(){
+        ImageIcon icon=new ImageIcon(getClass().getResource("/image/Cold-Coffee-.jpg"));
+        Image img=icon.getImage().getScaledInstance(jLblManager1.getWidth(),jLblManager1.getHeight(),Image.SCALE_SMOOTH);
+        jLblManager1.setIcon(new ImageIcon(img));
+        
+        //jLblManager2
+        ImageIcon icon2=new ImageIcon(getClass().getResource("/image/Coffee-icon-64.jpg"));
+        Image img2=icon2.getImage().getScaledInstance(jLblManager2.getWidth(),jLblManager2.getHeight(),Image.SCALE_SMOOTH);
+        jLblManager2.setIcon(new ImageIcon(img2));
+        
+        //jLblManager-7up
+        ImageIcon icon3=new ImageIcon(getClass().getResource("/image/7up.jpg"));
+        Image img3=icon3.getImage().getScaledInstance(jLblManager.getWidth(),jLblManager.getHeight(),Image.SCALE_SMOOTH);
+        jLblManager.setIcon(new ImageIcon(img3));
+        
+        //jLblManager3
+        ImageIcon icon4=new ImageIcon(getClass().getResource("/image/best-hamburger-patties-1.jpg"));
+        Image img4=icon4.getImage().getScaledInstance(jLblManager3.getWidth(),jLblManager3.getHeight(),Image.SCALE_SMOOTH);
+        jLblManager3.setIcon(new ImageIcon(img4));
+        
+        //jLblManager4-lemon-juice
+        ImageIcon icon5=new ImageIcon(getClass().getResource("/image/lemon-juice.png"));
+        Image img5=icon5.getImage().getScaledInstance(jLblManager4.getWidth(),jLblManager4.getHeight(),Image.SCALE_SMOOTH);
+        jLblManager4.setIcon(new ImageIcon(img5));
+        
+        //jLblManager10-pizza
+        ImageIcon icon6=new ImageIcon(getClass().getResource("/image/pizza.jpg"));
+        Image img6=icon6.getImage().getScaledInstance(jLblManager10.getWidth(),jLblManager10.getHeight(),Image.SCALE_SMOOTH);
+        jLblManager10.setIcon(new ImageIcon(img6));
+        
+        //jLblManager11-milkcoffee
+        ImageIcon icon7=new ImageIcon(getClass().getResource("/image/milkcoffee.jpg"));
+        Image img7=icon7.getImage().getScaledInstance(jLblManager11.getWidth(),jLblManager11.getHeight(),Image.SCALE_SMOOTH);
+        jLblManager11.setIcon(new ImageIcon(img7));
+        
+        //jLblManager12-Orangejuice
+        ImageIcon icon8=new ImageIcon(getClass().getResource("/image/Orangejuice.jpg"));
+        Image img8=icon8.getImage().getScaledInstance(jLblManager12.getWidth(),jLblManager12.getHeight(),Image.SCALE_SMOOTH);
+        jLblManager12.setIcon(new ImageIcon(img8));
+        
+        //jLblManager13-hotcoffee
+        ImageIcon icon9=new ImageIcon(getClass().getResource("/image/hot.png"));
+        Image img9=icon9.getImage().getScaledInstance(jLblManager13.getWidth(),jLblManager13.getHeight(),Image.SCALE_SMOOTH);
+        jLblManager13.setIcon(new ImageIcon(img9));
+        
+        //jLblManager14-milktea
+        ImageIcon icon10=new ImageIcon(getClass().getResource("/image/milktea.jpg"));
+        Image img10=icon10.getImage().getScaledInstance(jLblManager14.getWidth(),jLblManager14.getHeight(),Image.SCALE_SMOOTH);
+        jLblManager14.setIcon(new ImageIcon(img10));
+        
+        
+        
+        
+        
+    }
     private void jbtnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnExitActionPerformed
         // TODO add your handling code here:
         //System.exit(0);
@@ -1340,17 +1414,17 @@ public class Dashboard extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jbtnExitActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jtxtSubTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtSubTotalActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_jtxtSubTotalActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void jtxtTaxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtTaxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_jtxtTaxActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void jtxtTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtTotalActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_jtxtTotalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1505,12 +1579,12 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JSpinner jSpinner8;
     private javax.swing.JSpinner jSpinner9;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JButton jbtnExit;
     private javax.swing.JButton jbtnReceipt;
     private javax.swing.JButton jbtnReset;
     private javax.swing.JButton jbtnTotal;
+    private javax.swing.JTextField jtxtSubTotal;
+    private javax.swing.JTextField jtxtTax;
+    private javax.swing.JTextField jtxtTotal;
     // End of variables declaration//GEN-END:variables
 }
